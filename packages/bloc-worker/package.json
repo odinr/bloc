@@ -1,6 +1,6 @@
 {
   "name": "@codin/bloc-worker",
-  "version": "0.0.2-alpha.0",
+  "version": "0.0.2-alpha.2+73a349c",
   "description": "",
   "keywords": [
     "bloc",
@@ -42,5 +42,6 @@
   },
   "devDependencies": {
     "rxjs": "^6.5.3"
-  }
+  },
+  "gitHead": "73a349c0ad61cc4ceefaf3a0809fb5a7fa3e1bbd"
 }
