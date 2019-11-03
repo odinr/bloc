@@ -5,7 +5,18 @@
   "main": "index.js",
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "bootstrap": "lerna bootstrap --hoist"
+  },
   "devDependencies": {
-    "lerna": "^3.18.3"
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "lerna": "^3.18.3",
+    "lodash.camelcase": "^4.3.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-filesize": "^6.2.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-progress": "^1.1.1",
+    "rollup-plugin-terser": "^5.1.2"
   }
 }

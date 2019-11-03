@@ -1,0 +1,30 @@
+{
+  "name": "@codin/bloc",
+  "version": "0.0.1",
+  "description": "",
+  "main": "bloc.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.js",
+  "scripts": {
+    "compile": "tsc",
+    "prebuild": "npm run compile",
+    "build": "rm -rf ./dist ; npx rollup -c ../rollup.config.js",
+    "prepack": "npm run compile"
+  },
+  "files": [
+    "dist/*",
+    "bloc.*"
+  ],
+  "keywords": [
+    "bloc",
+    "rxjs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "rxjs": "^6.5.3"
+  }
+}
