@@ -1,6 +1,6 @@
 {
   "name": "@codin/bloc",
-  "version": "0.0.2-alpha.0",
+  "version": "0.0.3-alpha.0",
   "description": "",
   "author": "odin thomas rochmann <odin.rochmann@gmail.com>",
   "main": "lib/index.js",

@@ -1,6 +1,6 @@
 {
   "name": "bloc-tests",
-  "version": "1.0.0",
+  "version": "0.0.3-alpha.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,13 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@codin/bloc": "^0.0.2-alpha.0",
+    "@codin/bloc": "^0.0.3-alpha.0",
     "@types/chai": "^4.2.4",
     "@types/mocha": "^5.2.7",
     "chai": "^4.2.0",
     "mocha": "^6.2.2",
     "rollup": "^1.26.3",
-    "ts-node": "^8.4.1",
-    "rxjs": "^6.5.3"
+    "rxjs": "^6.5.3",
+    "ts-node": "^8.4.1"
   }
 }

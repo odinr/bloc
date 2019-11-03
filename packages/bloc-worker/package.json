@@ -1,6 +1,6 @@
 {
   "name": "@codin/bloc-worker",
-  "version": "0.0.2-alpha.4+875cb6a",
+  "version": "0.0.3-alpha.0",
   "description": "",
   "keywords": [
     "bloc",
@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/odinr/bloc#readme",
   "dependencies": {
-    "@codin/bloc": "^0.0.2-alpha.0"
+    "@codin/bloc": "^0.0.3-alpha.0"
   },
   "peerDependencies": {
     "rxjs": "^6.x"
