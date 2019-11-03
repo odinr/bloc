@@ -38,5 +38,8 @@
   "bugs": {
     "url": "https://github.com/odinr/bloc/issues"
   },
-  "homepage": "https://github.com/odinr/bloc#readme"
+  "homepage": "https://github.com/odinr/bloc#readme",
+  "dependencies": {
+    "rxjs": "^6.5.3"
+  }
 }
