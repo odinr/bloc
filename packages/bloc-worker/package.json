@@ -1,0 +1,46 @@
+{
+  "name": "@codin/bloc-worker",
+  "version": "0.0.2-alpha.0",
+  "description": "",
+  "keywords": [
+    "bloc",
+    "rxjs",
+    "worker"
+  ],
+  "author": "odin thomas rochmann <odin.rochmann@gmail.com>",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.js",
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/odinr/bloc.git"
+  },
+  "scripts": {
+    "prebuild": "rm -rf dist lib",
+    "build": "npm run build:tsc && npm run build:rollup",
+    "build:tsc": "tsc",
+    "build:rollup": "npx rollup -c ../rollup.config.js",
+    "prepack": "npm run build"
+  },
+  "bugs": {
+    "url": "https://github.com/odinr/bloc/issues"
+  },
+  "homepage": "https://github.com/odinr/bloc#readme",
+  "dependencies": {
+    "@codin/bloc": "^0.0.2-alpha.0"
+  },
+  "peerDependencies": {
+    "rxjs": "^6.x"
+  },
+  "devDependencies": {
+    "rxjs": "^6.5.3"
+  }
+}

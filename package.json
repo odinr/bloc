@@ -6,17 +6,32 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "bootstrap": "lerna bootstrap --hoist"
+    "postinstall": "npm run bootstrap",
+    "bootstrap": "lerna bootstrap --no-ci --hoist",
+    "bootstrap:quick": "npm run bootstrap -- --scope=@codin/*",
+    "clean": "npm run clean:artifacts && npm run clean:packages && npm run clean:root",
+    "clean:artifacts": "lerna run clean --parallel",
+    "clean:packages": "lerna clean --yes",
+    "clean:root": "rimraf node_modules",
+    "test": "npm --prefix tests run test"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "lerna": "^3.18.3",
     "lodash.camelcase": "^4.3.0",
+    "mocha": "^6.2.2",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-filesize": "^6.2.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-progress": "^1.1.1",
-    "rollup-plugin-terser": "^5.1.2"
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-typescript": "^1.0.1"
+  },
+  "dependencies": {
+    "@lerna/filter-options": "^3.18.0",
+    "chai": "^4.2.0",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.6.4"
   }
 }

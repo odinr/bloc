@@ -1,6 +1,5 @@
+import typescript from 'rollup-plugin-typescript';
 import resolve from 'rollup-plugin-node-resolve';
-import babel from 'rollup-plugin-babel';
-import preset from '@babel/preset-env';
 import {terser} from 'rollup-plugin-terser';
 import camelCase from 'lodash.camelcase';
 import progress from 'rollup-plugin-progress';
@@ -8,28 +7,27 @@ import filesize from 'rollup-plugin-filesize';
 
 const pkg = require(`${process.cwd()}/package.json`);
 const name = camelCase(pkg.name);
-function create(args) {
-  const {module, ...rest} = args;
-  const format = 'esm';
+function create(module) {
   const plugins = [
+    typescript({
+      "module": "es6",
+    }),
     progress({clearline:false}),
     filesize({showMinifiedSize: false}),
-    babel({presets: [[preset, {targets: {esmodules: true}}]]}),
-    terser(),
+    terser({output: {comments: () => ''}}),
   ];
   return {
-    input: pkg.main,
+    input: `${process.cwd()}/src/index.ts`,
     output: {
       name,
-      format,
+      format: 'esm',
       file: module ? pkg.module : pkg.browser,
     },
     plugins: module ? plugins : [resolve(), ...plugins],
-    ...rest
   };
 }
 
 export default [
-  create({module: true}),
-  create({module: false}),
+  create(true),
+  create(false),
 ];

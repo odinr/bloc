@@ -2,29 +2,41 @@
   "name": "@codin/bloc",
   "version": "0.0.2-alpha.0",
   "description": "",
-  "main": "bloc.js",
-  "module": "dist/index.esm.js",
-  "browser": "dist/index.js",
+  "author": "odin thomas rochmann <odin.rochmann@gmail.com>",
+  "main": "lib/index.js",
+  "module": "dist/index.js",
+  "browser": "dist/index.bundle.js",
   "scripts": {
-    "compile": "tsc",
-    "prebuild": "npm run compile",
-    "build": "rm -rf ./dist ; npx rollup -c ../rollup.config.js",
-    "prepack": "npm run compile"
+    "prebuild": "rm -rf dist lib",
+    "build": "npm run build:tsc && npm run build:rollup",
+    "build:tsc": "tsc",
+    "build:rollup": "npx rollup -c ../rollup.config.js",
+    "prepack": "npm run build"
   },
   "files": [
-    "dist/*",
-    "bloc.*"
+    "dist",
+    "lib"
   ],
   "keywords": [
     "bloc",
     "rxjs"
   ],
-  "author": "",
   "license": "ISC",
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
+  "peerDependencies": {
+    "rxjs": "^6.x"
+  },
+  "devDependencies": {
     "rxjs": "^6.5.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/odinr/bloc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/odinr/bloc/issues"
+  },
+  "homepage": "https://github.com/odinr/bloc#readme"
 }
