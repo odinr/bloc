@@ -1,3 +1,7 @@
-#!/bin/bash
+#!/bin/bash -eux
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
-echo $BRANCH
+if [ $BRANCH == "master" ]; then
+    lerna publish
+else
+    lerna publish --canary --dist-tag $BRANCH
+fi
